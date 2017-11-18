@@ -181,6 +181,13 @@ class BassGuitar: Guitar {
     
 }
 
+let amplifier = Amplifier()
+let electricGuitar = ElecticGuitar(brand: "Gibson", stringGauge: "medium", amplifier: amplifier)
+//electricGuitar.tune()
+
+let bassGuitar = BassGuitar(brand: "Fender", stringGauge: "heavy", amplifier: amplifier)
+//bassGuitar.tune()
+
 
 
 
