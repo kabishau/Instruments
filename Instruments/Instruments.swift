@@ -106,6 +106,40 @@ let acousticGuitar = AcousticGuitar(brand: "Roland", stringGauge: "light")
 //acousticGuitar.play(music)
 
 
+class Amplifier {
+    
+    // access only inside method, "_" - hidden implementation (Swift agreement)
+    private var _volume: Int
+    
+    // read only access to value isOn for outer "users?"
+    private(set) var isOn: Bool
+    
+    init() {
+        isOn = false
+        _volume = 0
+    }
+    
+    func plugIn() {
+        isOn = true
+    }
+    
+    func unplug() {
+        isOn = false
+    }
+    
+    // work for _volume to set required rules
+    var volume: Int {
+        // set volume sound to 0 if "volume" 
+        get {
+            return isOn ? _volume : 0
+        }
+        set {
+            _volume = min(max(newValue, 0), 10)
+        }
+    }
+}
+
+
 
 
 
