@@ -188,6 +188,19 @@ let electricGuitar = ElecticGuitar(brand: "Gibson", stringGauge: "medium", ampli
 let bassGuitar = BassGuitar(brand: "Fender", stringGauge: "heavy", amplifier: amplifier)
 //bassGuitar.tune()
 
-
+// POLYMORPHISM
+class Band {
+    let instruments: [Instrument]
+    
+    init(instruments: [Instrument]) {
+        self.instruments = instruments
+    }
+    
+    func perform(_ music: Music) {
+        for instrument in instruments {
+            instrument.perform(music)
+        }
+    }
+}
 
 
