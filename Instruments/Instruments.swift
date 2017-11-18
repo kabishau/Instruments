@@ -129,7 +129,7 @@ class Amplifier {
     
     // work for _volume to set required rules
     var volume: Int {
-        // set volume sound to 0 if "volume" 
+        // set volume sound to 0 if "volume"
         get {
             return isOn ? _volume : 0
         }
@@ -139,7 +139,47 @@ class Amplifier {
     }
 }
 
+class ElecticGuitar: Guitar {
+    // ElecticGuitar "has-a" amplifier
+    let amplifier: Amplifier
+    
+    init(brand: String, stringGauge: String = "light", amplifier: Amplifier) {
+        self.amplifier = amplifier
+        super.init(brand: brand, stringGauge: stringGauge)
+    }
+    
+    override func tune() -> String {
+        amplifier.plugIn()
+        amplifier.volume = 5
+        return "Tune \(brand) electic with E A D G B E"
+    }
+    
+    override func play(_ music: Music) -> String {
+        let preparedNotes = super.play(music)
+        return "Play solo \(preparedNotes) at volume \(amplifier.volume)."
+    }
+}
 
+class BassGuitar: Guitar {
+    
+    let amplifier: Amplifier
+    
+    init(brand: String, stringGauge: String = "heavy", amplifier: Amplifier) {
+        self.amplifier = amplifier
+        super.init(brand: brand, stringGauge: stringGauge)
+    }
+    
+    override func tune() -> String {
+        amplifier.plugIn()
+        return "Tune \(brand) bass with E A D G"
+    }
+    
+    override func play(_ music: Music) -> String {
+        let preparedNotes = super.play(music)
+        return "Play bass line \(preparedNotes) at volume \(amplifier.volume)."
+    }
+    
+}
 
 
 
