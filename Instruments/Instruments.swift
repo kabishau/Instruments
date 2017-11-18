@@ -76,7 +76,15 @@ let music = Music(notes: ["C", "G", "F"])
 // for Playground - property of the Type
 //Piano.blackKeys
 
-
+// intermediate abstract class
+class Guitar: Instrument {
+    let stringGuage: String
+    
+    init(brand: String, stringGauge: String = "medium") {
+        self.stringGuage = stringGauge
+        super.init(brand: brand)
+    }
+}
 
 
 
