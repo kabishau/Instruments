@@ -35,9 +35,20 @@ class Piano: Instrument {
         return "Piano standard tuning for \(brand)."
     }
     
-    override func play(_ music: Music) -> String {
+    // new extended version of play method
+    func play(_ music: Music, usingPedals: Bool) -> String {
         let preparedNotes = super.play(music)
-        return "Piano playing \(preparedNotes)"
+        
+        if hasPedals && usingPedals {
+            return "Play piano notes \(preparedNotes) with pedals"
+        } else {
+            return "Play piano notes \(preparedNotes) with pedals"
+        }
+    }
+    
+    // overriding using new extended version of play using pedals
+    override func play(_ music: Music) -> String {
+        return play(music, usingPedals: hasPedals)
     }
 }
 
