@@ -100,6 +100,11 @@ class AcousticGuitar: Guitar {
     }
 }
 
+let acousticGuitar = AcousticGuitar(brand: "Roland", stringGauge: "light")
+// Playground
+//acousticGuitar.tune()
+//acousticGuitar.play(music)
+
 
 
 
