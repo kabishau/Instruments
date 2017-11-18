@@ -64,3 +64,21 @@ class Music {
         return notes.joined(separator: " ")
     }
 }
+
+// instances of classes
+
+let piano = Piano(brand: "Yamaha", hasPedals: true)
+// for Playground
+//piano.tune()
+let music = Music(notes: ["C", "G", "F"])
+// for Playground
+//piano.play(music, usingPedals: false)
+// for Playground - property of the Type
+//Piano.blackKeys
+
+
+
+
+
+
+
