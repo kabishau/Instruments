@@ -203,4 +203,7 @@ class Band {
     }
 }
 
+let instruments = [piano, acousticGuitar, electricGuitar, bassGuitar]
+let band = Band(instruments: instruments)
+//band.perform(music)
 
