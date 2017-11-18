@@ -26,7 +26,7 @@ class Piano: Instrument {
     static let whiteKeys = 52
     static let blackKeys = 36
     
-    init(hasPedals: Bool = false, brand: String) {
+    init(brand: String, hasPedals: Bool = false) {
         self.hasPedals = hasPedals
         super.init(brand: brand)
     }
